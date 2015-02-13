@@ -1,20 +1,12 @@
 {
-  "name": "StartupSass",
+  "name": "hack-otr",
   "version": "0.0.1",
-  "description": "Small, responsive scaffolding designed to accelerate your web project.",
-  "keywords": [
-    "sass",
-    "framework",
-    "mobile",
-    "responsive",
-    "website",
-    "scaffolding"
-  ],
+  "description": "Repository for the HackOTR 2014 website.",
+  "keywords": [],
   "authors": [
     "Michael Zalla <michael@zalla.io>"
   ],
-  "license": "MIT",
-  "homepage": "https://github.com/MichaelZalla/StartupSass",
+  "homepage": "https://github.com/MichaelZalla/hack-otr",
   "main": "src/scss/main.scss",
   "ignore": [
     "**/.*",

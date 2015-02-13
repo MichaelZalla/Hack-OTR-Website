@@ -19,14 +19,10 @@ module.exports = function(grunt) {
 		copy: {
 			dist: {
 				files: [
-					// Make all targets in 'src' directory copy to a location
-					// in 'dist' relative to own directory
-					
-					// { expand:true, cwd:'src/', src:['*.html','*.png','*.ico'], dest:'dist' },
-					// { expand:true, cwd:'src/js/', src:['**'], dest:'dist/js' },
-					// { expand:true, cwd:'src/img/', src:['*.svg','*.png','*.jpg','*.jpeg'], dest:'dist/img' },
-					// { expand:true, cwd:'src/fonts/', src:['**'], dest:'dist/fonts' }
-					
+
+					// Make all targets in 'src' directory copy to a location in
+					// 'dist' relative to own directory
+										
 					{	// html
 						expand: true,
 						flatten: false,
@@ -40,6 +36,13 @@ module.exports = function(grunt) {
 						cwd: 'src/',
 						src: ['*.png', '*.ico'],
 						dest: 'dist'
+					},
+					{	// first-party scripts
+						expand: true,
+						flatten: false,
+						cwd: 'src/js/',
+						src: ['**/*'],
+						dest: 'dist/js'
 					},
 					{	// images
 						expand: true,
@@ -97,7 +100,7 @@ module.exports = function(grunt) {
 			},
 			dist: { files: {
 				// startup-sass.min.css
-				'dist/css/startup-sass.min.css': 'src/scss/main.scss'
+				'dist/css/hack-otr.min.css': 'src/scss/main.scss'
 			}}
 		},
 
