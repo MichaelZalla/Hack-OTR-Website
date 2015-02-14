@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	
 	<!-- Content metadata -->
-	<title>Startup Sass</title>
+	<title>HackOTR</title>
 	<meta name="description" content="Small, responsive scaffolding designed to accelerate your web project">
 	<meta name="author" content="Michael Zalla (https://github.com/MichaelZalla)">
 	
@@ -21,11 +21,13 @@
 	<link rel="icon" type="image/png" href="/favicon-16.png?v=0.0.1" sizes="16x16" />
 	
 	<!-- Stylesheets -->
-	<link rel="stylesheet" href="/css/startup-sass.min.css?v=0.0.1">
+	<link rel="stylesheet" href="./css/hack-otr.min.css?v=0.0.1">
 
 </head>
-<body>
-			
+<body id="landing">
+	
+	<span style="font-style:italic;text-indent:-999;">font preloader</span>
+
 	<!-- Site header -->
 	<header id="header" class="fixed dark">
 		<div class="container">
@@ -33,9 +35,8 @@
 
 				<!-- Branding -->
 				<div class="left">
-					<a href="#" id="logo">
-						<span class="label">Startup Sass</span>
-						<span class="label" style="letter-spacing:0.035em;">v&nbsp;0.0.1</span>
+					<a id="logo" data-scroll-nav="0">
+						<span class="label">HackOTR</span>
 					</a>
 				</div>
 
@@ -45,10 +46,10 @@
 						<div class="container">
 							<div class="content dark">
 								<ul>
-									<li><a href="#"><span class="label">About&ensp;Us</span></a></li>
-									<li><a href="#"><span class="label">F.A.Q.</span></a></li>
-									<li><a href="#"><span class="label">Blog</span></a></li>
-									<li><a href="#"><span class="label">Connect</span></a></li>
+									<li><a data-scroll-nav="2"><span class="label">F.A.Q.</span></a></li>
+									<li><a data-scroll-nav="3"><span class="label">Schedule</span></a></li>
+									<li><a data-scroll-nav="4"><span class="label">Sponsors</span></a></li>
+									<li><a data-scroll-nav="5"><span class="label">Contact</span></a></li>
 								</ul>
 							</div>
 						</div>
@@ -58,90 +59,265 @@
 
 			</div>
 		</div>
-		<div class="indicator"></div>
+		<!-- <div class="indicator"></div> -->
 	</header>
 
-	<!-- Content section -->
-	<section id="section1" class="fullscreen">
+	<!-- Full-screen hero & registration link -->
+	<section id="hero" class="fullscreen" data-scroll-index="0">
+		<div class="container">
+			<div class="content">
+				
+				<div class="row">
+					<div class="column small-12">
+						<span class="hero">come out and play.</span>
+						<span class="notice">Participating in hackOTR is 100% free. Space is limited, so register early!</span>
+						<a class="button register" href="#" target="_blank">register now</a>
+					</div>
+					<div class="w3 column small-12 medium-12 large-4">
+						<div>
+							<span class="label">what</span>
+							<span style=""><em>hacking!<br>prizes!<br>fun!</em></span>
+						</div>
+					</div>
+					<div class="w3 column small-12 medium-12 large-4">
+						<div>
+							<span class="label">when</span>
+							<span>Saturday and Sunday,<br>March 6th &amp; 7th<br>5pm&mdash;5pm</span>
+						</div>
+					</div>
+					<div class="w3 column small-12 medium-12 large-4">
+						<div>
+							<span class="label">where</span>
+							<span>The Brandery<br>1411 Vine Street<br>Cincinnati, OH 45202</span>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+	
+	<!-- Intro messaging -->
+	<section id="intro" class="dark" data-scroll-index="1">
+		<div class="container">
+			<div class="content">
+				<div class="row">
+					<div class="column small-12 medium-11">
+						<span class="callout">We know there's ace talent in the Queen City. That's why we're looking for excited individuals to contribute their skills in <strong>design, programming, and marketing</strong> to developing ideas and having fun! Join The Brandery on <strong>March 6th and 7th</strong> for <strong>twenty-four hours</strong> of collaborative hacking!</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Event FAQ -->
+	<section id="faq" data-scroll-index="2">
+		<div class="container">
+			<div class="content">
+				
+				<span class="heading" style="-0.025em;">F.A.Q.</span>
+				
+				<ul class="questions">
+					<li>
+					    <span class="question">What is a hackathon?</span>
+					    <span class="answer">A <em>hackathon</em> is an event where people who are interested in digital product development gather together to create new, exploratory software projects. Hackathons are a chance for programmers, designers, and other creatives to form teams and build something interesting through intense collaboration.</span>
+					</li>	
+					<li>
+					    <span class="question">What do you make at a hackathon?</span>
+					    <span class="answer"><em>Websites, web apps, mobile apps, social networks, software tools, hardware hacks, wearable hacks</em>—when it comes to hacks, the sky is the limit! You are only restricted by your own creativity. Hackers are encouraged to address real-world problems for real-world users. Hacks may focus on specific themes, such as health, education, technology, social causes, and everyday life.</span>
+					</li>
+					<li>
+					    <span class="question">Who can participate? Do I have to be in a startup?</span>
+					    <span class="answer">HackOTR is an inclusive event. We're looking for excited individuals who want to contribute their skills in design, programming, product development, and marketing to solve problems and have fun. Anyone is welcome to register. You do <em>not</em> need to be a programmer, be in a startup, or have previous experience with hackathons. We also welcome college and high-school students who want to take part in building products or gaining exposure to a field.</span>
+					</li>
+					<li>
+					    <span class="question">How much experience do I need?</span>
+					    <span class="answer">We welcome hackers from all backgrounds. Whether you're a software developer at a startup, a marketer for a larger brand, or a college student interested in design, we encourage you to register—and bring your experience to the table.</span>
+					</li>
+					<li>
+					    <span class="question">What things should I bring to the hackathon? Do I need a team?</span>
+					    <span class="answer">Absolutely not! Hackers are welcome to form teams prior to the event, but this is optional. We will have a team-building talk and topic exploration sessions to help you find a team to hack with. Whether you're going in with friends or going to meet new ones, there are a few things that every hacker should bring: a laptop (and charger), a cellphone (and charger), a toothbrush, a change of clothes (optional), a pillow and blanket (optional).</span>
+					</li>
+					<li>
+					    <span class="question">How can I register? When's the deadline?</span>
+					    <span class="answer"><a href="">Click here</a> to fill out the registration form! Hackers must register by <a href="">January</a> <a href="">1st</a> in order to attend the hackathon.</span>
+					</li>
+
+					<button class="more">more faq</button>
+
+					<li>
+					    <span class="question">Who is organizing the event?</span>
+					    <span class="answer">HackOTR is hosted by <a href="http://www.brandery.org">The Brandery</a>, a seed-stage startup accelerator program that's ranked top-ten in the nation. The Brandery is headquartered in Cincinnati, Ohio. Learn more about The Brandery at <a href="http://www.brandery.org">brandery.org</a>.</span>
+					</li>
+					<li>
+					    <span class="question">Will the organizers own my idea / design / code after the hackathon?</span>
+					    <span class="answer">No. The Brandery will not claim ownership over any intellectual property—designs, branding, and code—that gets generated at the hackathon. Hackers are welcome to take their work with them at the end of the event.</span>
+					</li>
+					<li>
+					    <span class="question">Who is sponsoring the event?</span>
+					    <span class="answer">HackOTR is sponsored by a number of local companies and organizations who want to see Cincinnati continue to grow as a center for entrepreneurship and technology. To learn about each event sponsor, check out the <a href="">Sponsors</a> page!</span>
+					</li>
+					<li>
+					    <span class="question">Will there be prizes?</span>
+					    <span class="answer">Yes! Prizes will be offered to teams with the best hacks at the end of the hackathon. Hacks will be judged on the following criteria: creativity, usefulness, usability, and delivery. All hackers will also recieve free HackOTR <a href="">T-shirt, stickers, etc</a> as well as some swag from our sponsors.</span>
+					</li>
+					<li>
+					    <span class="question">Are there specific challenges for prizes?</span>
+					    <span class="answer">Some sponsors will offer prizes to the best hack in a particular area, such as web apps or wearables. However, The Brandery will also be offering prizes to our favorite hacks, regardless of the domain. Regardless of where you take your hack, you'll still be competing for cool prizes—and bragging rights!</span>
+					</li>
+					<li>
+					    <span class="question">Who will be judging the hacks?</span>
+					    <span class="answer">HackOTR will feature judges from The Brandery's network of experienced mentors and experts, as well as from our sponsors. The mentors offer significant experience with startup ventures, product development, and technology.</span>
+					</li>
+					<li>
+					    <span class="question">Will there be (free) food?</span>
+					    <span class="answer">Yes! The Brandery will be providing free food, snacks, and drinks to keep you going during the event. We'll also be catering <a href="">dinner, breakfast, and lunch</a> through our local sponsors including <a href="">Alabama-Q, Gomez Salsa, and Panera Bread</a>.</span>
+					</li>
+					<li>
+					    <span class="question">Will there be Wi-Fi?</span>
+					    <span class="answer">Yes! High-speed wireless internet will be provided, courtesy of <a href="">Cincinnati Bell</a>.</span>
+					</li>
+					<li>
+					    <span class="question">What about parking?</span>
+					    <span class="answer">There are several public parking garages located near The Brandery, including the Mercer Garage across the street and the Washington Park Garage nearby.</span>
+					</li>
+					<li>
+					    <span class="question">Can we take breaks or sleep in the building?</span>
+					    <span class="answer">Yes, hackers can take breaks. If you need to nap, you'll be able to find a chair or quiet space in The Brandery (but BYOP).</span>
+					</li>
+					<li>
+					    <span class="question">Do we have to be present for the entire event?</span>
+					    <span class="answer">No. While we encourage hackers to spend as much time during the event improving their hacks, you are still permitted to leave The Brandery. We ask that all attendees be present at the start of the hackathon to catch some important presentations. Afterward, you are welcome to come and go as long as you are registered with a team. We'd also ask that all hackers return to The Brandery for closing ceremonies and prizes.</span>
+					</li>
+					<li>
+					    <span class="question">Do I have to work on a team?</span>
+					    <span class="answer">The Brandery and its startups find success through collaboration and teamwork. Likewise, HackOTR will be focused on team-based execution of ideas. During the hackathon, all participants are expected to join teams of <a href="">3–6</a> hackers.</span>
+					</li>
+					<li>
+					    <span class="question">What if I already have an idea or existing project?</span>
+					    <span class="answer">HackOTR will include a focus on forming teams of hackers by idenitifying shared interests. We'll hold brainstorming sessions so that you can find like-minded hackers to work with. We ask that by attending, you'll leave pre-conceived concepts at the door in favor of team-based exploration of ideas.</span>
+					</li>
+					<li>
+					    <span class="question">Can I use the hackathon to develop my startup?</span>
+					    <span class="answer">No. Hackathons are events dedicated to producing entirely new concepts or products during a single, intense period of collaboration. HackOTR is not a place for you to continue directly developing your existing business or for-profit project.</span>
+					</li>
+					<!--
+					<li>
+					    <span class="question">Can I volunteer to help run the event?</span>
+					    <span class="answer"><a href="">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</saan>
+					    </p>
+					</li>
+					<li>
+					    <span class="question">How can I become a sponsor?</span>
+					    <span class="answer">
+					    	We're glad that you're interested in supporting HackOTR and the local creative community! Benefits of sponsoring HackOTR can include:
+						    <ul style="list-style-type: circle;">
+						        <li>Featured branding on the HackOTR website</li>
+						        <li>Direct shoutouts from HackOTR's social media channels (Twitter, Facebook, etc)</li>
+						        <li>Verbal recognition during opening and closing ceremonies</li>
+						        <li>Visible branding on HackOTR T-shirts to commemorate the event</li>
+						        <li>Customized résumé packages from all attendees</li>
+						    </ul>
+						    For inquiries about sponsorship, please send a message to <a href="mailto:sponsors@hackotr.com">sponsors@hackotr.com</a>. For a full list of our sponsors, see the <a href="">Sponsors</a> page.
+						</span>
+					</li>
+					-->
+				</ul>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- Event schedule -->
+	<section id="schedule" class="dark" data-scroll-index="3">
+		<div class="container">
+			<div class="content">
+				
+				<span class="heading">Schedule</span>
+
+				<ul class="activities">
+					
+					<!--
+					<li class="row">
+						<div class="column small-4 medium-3 large-2"><span>4:00pm</span></div>
+						<div class="column small-8 medium-9 large-10"><span>On-site Check-in &amp; Socializing</span></div>
+					</li>
+					<li class="row">
+						<div class="column small-4 medium-3 large-2"><span>4:00pm</span></div>
+						<div class="column small-8 medium-9 large-10"><span>On-site Check-in &amp; Socializing</span></div>
+					</li>
+					<li class="row">
+						<div class="column small-4 medium-3 large-2"><span>4:00pm</span></div>
+						<div class="column small-8 medium-9 large-10"><span>On-site Check-in &amp; Socializing</span></div>
+					</li>
+					<li class="row">
+						<div class="column small-4 medium-3 large-2"><span>4:00pm</span></div>
+						<div class="column small-8 medium-9 large-10"><span>On-site Check-in &amp; Socializing</span></div>
+					</li>
+					<li class="row">
+						<div class="column small-4 medium-3 large-2"><span>4:00pm</span></div>
+						<div class="column small-8 medium-9 large-10"><span>On-site Check-in &amp; Socializing</span></div>
+					</li>
+					<li class="row">
+						<div class="column small-4 medium-3 large-2"><span>4:00pm</span></div>
+						<div class="column small-8 medium-9 large-10"><span>On-site Check-in &amp; Socializing</span></div>
+					</li>
+					-->
+
+				</ul>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- Event sponsors -->
+	<section id="sponsors" data-scroll-index="4">
 		<div class="container">
 			<div class="content">
 
-				<h1 class="center" style="margin:0;">Welcome to Startup Sass.</h1>
-				<span class="center" style="opacity:0.35;">Now make something <i>awesome</i>&hellip;&nbsp;</span>
+				<span class="heading" style="-0.025em;">Sponsors</span>
 
 			</div>
 		</div>
 	</section>
 
 	<!-- Site footer -->
-	<footer id="footer">
+	<footer id="footer" class="dark" data-scroll-index="5">
 		<div class="container">
 			<div class="content">
 				<div class="row">
 
-					<!-- Branding -->
-					<div class="column small-12 medium-4 ss-footer-branding"><a href="#"></a></div>
-
-					<!-- Navigation -->
-					<div class="column small-12 medium-8 large-6 ss-footer-navigation">
-						<div class="row">							
-							<div class="column small-12 medium-4">
-								<span class="label">About</span><ul>
-									<li><a href="#">Our Story</a></li>
-									<li><a href="#">The Blog</a></li>
-									<li><a href="#">Careers</a></li>
-								</ul>
-							</div>
-							<div class="column small-12 medium-4">
-								<span class="label">Product</span><ul>
-									<li><a href="#">Overview</a></li>
-									<li><a href="#">Features</a></li>
-									<li><a href="#">Pricing</a></li>
-								</ul>
-							</div>							
-							<div class="column small-12 medium-4">
-								<span class="label">Resources</span><ul>
-									<li><a href="#">Help</a></li>
-									<li><a href="#">Terms &amp; Privacy</a></li>
-									<li><a href="#">Contact Us</a></li>
-								</ul>
-							</div>							
-						</div>
-					</div>
-
-					<!-- Social -->
-					<!--
-					<div class="column small-12 medium-2 ss-footer-social">
+					<div class="left column small-12 medium-6">
+						<!-- Branding & Social -->
 						<ul>
-							<li><a href="#" class="facebook" alt="Facebook"><p>Facebook</p></a></li>
-							<li><a href="#" class="twitter" alt="Twitter"><p>Twitter</p></a></li>
-							<li><a href="#" class="instagram" alt="Instagram"><p>Instagram</p></a></li>
+							<li><a href="http://www.twitter.com/brandery" class="logo" alt="HackOTR"><p>HackOTR</p></a></li>
+							<li><a href="https://www.facebook.com/Brandery" class="facebook" alt="Facebook"><p>Facebook</p></a></li>
+							<li><a href="http://www.twitter.com/brandery" class="twitter" alt="Twitter"><p>Twitter</p></a></li>
+							<li><a href="http://instagram.com/startupcincy" class="instagram" alt="Instagram"><p>Instagram</p></a></li>
+							<li><a href="https://www.youtube.com/user/GoBrandery" class="youtube" alt="YouTube"><p>Instagram</p></a></li>
 						</ul>
 					</div>
-					-->
 
+					<div class="right column small-12 medium-6">
+						<!-- Copyright -->
+						<a href="http://www.brandery.org"><span class="label">© 2015 the brandery</span></a>
+					</div>
+					
 				</div>
 			</div>
 		</div>
 	</footer>
 
-	<!-- LiveReload with grunt-contrib-watch (remove in production) -->
-	<script src="//localhost:35729/livereload.js"></script>
-
 	<!-- Dependencies -->
-	<script src="/js/vendor/jquery/jquery.min.js"></script>
-	<script src="/js/vendor/jquery/plugins/jquery-waypoints.min.js"></script>
-	<script src="/js/vendor/jquery/plugins/jquery-scrollIt.min.js"></script>
-	<script>
-		$(function() {
-			// Set up an event listener for menu screen transitions
-			// Parent element wraps the hamburger menu's pseudo-elements
-			$('.ss-nav-menu-toggle').parent().on('mouseup', function(e) {
-				$('.ss-nav-menu').toggleClass('expanded');
-			});
-		});
-	</script>
+	<script src="./js/vendor/jquery/jquery.min.js"></script>
+	<script src="./js/vendor/jquery/plugins/jquery-scrollIt.min.js"></script>
+	<!--
+	<script src="./js/vendor/jquery/plugins/jquery-waypoints.min.js"></script>
+	-->
 
+	<!-- Custom scripts -->
+	<script src="./js/hackotr.js"></script>
+	
 </body>
 
 </html>
