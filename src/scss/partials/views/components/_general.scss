@@ -1,0 +1,70 @@
+%bordered { border: 2.5px solid black; }
+
+%highlight {
+	display: inline-block !important;
+	padding: 0.26em 0.75em 0.14em 0;
+	background-color: $brandery-dark;
+	color: white;
+}
+
+.highlight { @extend %highlight; }
+
+span.label {
+	display: block;
+	@include typeset(0.84rem, 1.35, 0.125em, "Fira Sans", $font-weight-semibold);
+	text-transform: uppercase;
+}
+
+span.heading {
+	display: block;
+	@include typeset(2.5rem, 1.0, 0.0em, "Minion Pro", $font-weight-semibold);
+	text-align: center;
+	text-transform: none;
+	// color: lighten(black, 8%);
+}
+
+span.hero {
+	display: block;
+	@include typeset(3.84rem, 1.0, -0.024em, "Fira Sans", $font-weight-semibold);
+	// color: lighten(black, 8%);
+}
+
+span.callout {
+	display: block;
+	@include typeset(1.24rem, 2.15, 0.0em, "Fira Sans");
+}
+
+button,
+.button {
+	
+	$button-height: 2.65em;
+
+	overflow-y: hidden;
+	height: $button-height;
+	border-radius: ($button-height / 2);
+	@extend %bordered;
+
+	@include typeset(1.20rem, 1.35, 0.05em, "Fira Sans", $font-weight-semibold);
+	text-transform: uppercase;
+
+	@include vendorize(transition, all 0.18s ease-in-out);
+
+	&:not(:hover) {
+		color: black;
+		background-color: transparent;
+	}
+
+	&:hover {
+		color: white;
+		@include same(background-color, border-color, black); // $brandery-dark
+	}
+
+}
+
+@media #{ $medium-up } {
+
+span.heading { text-align: left; }
+
+span.hero { font-size: 4.25rem; }
+
+}

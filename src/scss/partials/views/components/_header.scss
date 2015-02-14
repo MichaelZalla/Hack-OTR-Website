@@ -1,0 +1,30 @@
+header {
+
+	#logo {
+		
+		padding-left: 0;
+		
+		.label {
+			
+			margin-top: 7px;
+			font-size: 1.84rem;
+			opacity: 0.24;
+
+		}
+
+	}
+
+}
+
+/* Desktop styles */
+
+@media #{ $medium-up } {
+
+header {
+
+
+
+}
+
+}
+

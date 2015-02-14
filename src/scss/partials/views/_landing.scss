@@ -1,0 +1,235 @@
+
+@import "components/header";
+
+@import "components/general";
+
+@import "components/footer";
+
+#landing {
+
+	section#hero,
+	section#faq,
+	section#schedule { }
+
+	section#hero {
+
+		.content {
+
+			display: block;
+			margin-bottom: 34px;
+			overflow-y: hidden;
+
+			.hero { margin-top: 94px; }
+
+			.notice {
+				display: block;
+				margin-top: 2.0em;
+				max-width: 500px;
+				@include typeset(1.750rem, 1.5, 0.0em, "Minion Pro");
+			}
+
+			a.register {
+				margin-top: 1.15em;
+				margin-bottom: 2.5em;
+			}
+
+			.w3.column {
+				
+				margin-top: 1.5em;
+				vertical-align: bottom;
+
+				div {
+					max-width: 336px;
+					padding: 1.25em 1.84em;
+					@extend %bordered;
+				}
+				span.label { font-size: 0.844rem };
+				span:not(.label) { @include typeset(1.313rem, 1.65, 0.0em, "Fira Sans"); }
+			}
+
+		}
+
+	}
+
+	section#intro,
+	section#schedule { background-color: $brandery-black; }
+
+	section#intro {
+				
+		.content { 
+			margin-top: 60px;
+			margin-bottom: 52px;
+		}
+
+		.column { float: right; }
+		.callout {
+			margin-top: 0;
+			max-width: 684px;
+		}
+
+	}
+
+	section#faq .content,
+	section#schedule .content { margin-bottom: 72px; }
+
+	section#faq {
+
+		.content {
+	
+			ul.questions { counter-reset: questions; }
+
+			ul.questions > li {
+
+				position: relative;
+				overflow: hidden;
+
+				// Based on Foundation values
+				@include same(padding-left, padding-right, 0.9375rem);
+
+				.question,
+				.answer {
+					display: block;
+					margin-top: 1.0rem;
+				}
+
+				.question {
+					margin-left: 12px;
+					text-indent: -12px;
+					cursor: pointer;
+					// color: white;
+					// @extend %highlight;
+				}
+
+				.question,
+				.question:before {
+					@include typeset(0.938rem, 1.35, 0.0em, "Fira Sans", $font-weight-semibold);
+					text-transform: uppercase;
+				}
+				
+				.question:before {
+					// Question counter
+					counter-increment: questions;
+					content: counter(questions) ".\00a0\00a0";
+				}
+
+				.answer {
+					
+					display: none;
+					font-size: 1.1375rem;
+					
+					a {
+						display: inline;
+						font-size: 1.24rem;
+					}
+
+
+				}
+
+			}
+
+			.more { margin: 1.84em auto 0; }
+
+		}
+
+	}
+
+	section#schedule {
+
+		.content {
+
+			@include same(padding-left, padding-right, 0);
+			
+			&, .row { max-width: none; }
+			.column { min-height:54px; }
+			.column:nth-child(odd) { text-align: right; background-color: blue; }
+			.column:nth-child(even) span { background-color: red; }
+
+			span.heading {
+				max-width: $ss-desktop-content-max-width;
+				@include same(margin-left, margin-right, auto);
+				@include same(padding-left, padding-right, $ss-mobile-content-side-padding);
+			}
+
+		}
+
+	}
+
+	section#sponsors {
+
+		min-height: 400px;
+
+	}
+
+}
+
+/* Desktop styles */
+
+@media #{ $medium-up } {
+
+#landing {
+	
+	span.callout {
+		font-size: 1.5rem;
+		line-height: 2.35;
+	}
+
+	section#hero .content {
+
+	}
+
+	section#faq .content {
+
+		ul.questions {
+
+			// (See: http://bennettfeely.com/flexplorer/)
+
+			// Safari 6.1+
+			display: -webkit-flex;
+			-webkit-flex-flow: row wrap;
+			
+			// Chrome 29+, Firefox 28+, IE11+
+			display: flex;
+			flex-flow: row wrap;
+
+			li {
+				
+				// Medium flexbox styles (2 columns)
+				// flex: <flex-grow> <flex-shrink> <flex-basis>
+				@include vendorize(flex, 0 1 50%);
+			
+				.answer { margin-left: 12px; }
+
+			}
+
+		}
+
+		.more {
+			clear: both;
+			display: inline-block;
+			margin: 2.0em 0 0 0;
+		}
+
+	}
+
+	section#schedule .content {
+		span.heading { @include same(padding-left, padding-right, $ss-desktop-content-side-padding); }
+	}
+
+}
+
+}
+
+@media #{ $large-up } {
+
+#landing {
+
+	section#hero .content span.hero { margin-top: 0; }
+
+	section#faq .content ul.questions > li {
+		// Medium flexbox styles (3 columns)
+		@include vendorize(flex, 0 1 33.33% !important);
+	}
+
+}
+
+}

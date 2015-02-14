@@ -19,13 +19,19 @@ $ss-mobile-content-side-padding: 18px;
 $ss-mobile-section-top-margin: 32px;
 $ss-mobile-section-bottom-margin: 18px;
 
+/* Tablet layout configuration */
+
+$ss-tablet-header-height: 124px;
+
 /* Desktop layout configuration */
 
 $ss-desktop-header-height: 64px;
-$ss-desktop-header-side-padding: 18px;
+// $ss-desktop-header-side-padding: 18px;
+$ss-desktop-header-side-padding: 60px;
 
-$ss-desktop-content-max-width: 1200px;
-$ss-desktop-content-side-padding: 50px;
+// $ss-desktop-content-max-width: 1200px;
+$ss-desktop-content-max-width: 1080px;
+$ss-desktop-content-side-padding: 60px;
 
 $ss-desktop-section-top-margin: 45px;
 $ss-desktop-section-bottom-margin: 32px;

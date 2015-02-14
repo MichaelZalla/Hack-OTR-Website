@@ -10,17 +10,22 @@
 
 footer {
 
+	background-color: $brandery-black;
+
 	.content { padding: 32px 0px; }
 
 	/* Branding */
 
+	
+
 	$brandmark-opacity: 0.84;
+	
 	.ss-footer-branding a {
 		margin-top: 4px;
 		border: 2px solid rgba(black, $brandmark-opacity);
 		opacity: $brandmark-opacity;
 		@include same(width, height, 48px);
-		@include background("/images/logo-black.svg", 62%);
+		@include background("/images/footer-logotype.svg", 62%);
 		@extend %grayscale;
 	}
 

@@ -4,36 +4,46 @@
  * @date 12-01-2014
  *
  * Imports a collection of font files and associates each with a font-
- * family, font-style, and font-weight. These properties can be used
+ * family, font-style, and font-weight. Theseperties can be used
  * together to target specific fonts for CSS selectors and custom classes.
  * Note that this module relies on $font-weight variables defined in
  * the 'fontface' mixin module.
  */
 
-/* Open Sans (Normal) */
+/* Minion Pro (Normal) */
 
-@include fontface("Open Sans", "/fonts/OpenSans/OpenSans-Light",
-	$font-weight-light, normal);
+@include fontface("Minion Pro", "../fonts/MinionPro/MinionPro-Regular",
+	$font-weight-regular);
 
-@include fontface("Open Sans", "/fonts/OpenSans/OpenSans-Regular",
-	$font-weight-regular, normal);
+@include fontface("Minion Pro", "../fonts/MinionPro/MinionPro-Semibold",
+	$font-weight-semibold);
 
-@include fontface("Open Sans", "/fonts/OpenSans/OpenSans-Semibold",
-	$font-weight-semibold, normal);
+@include fontface("Minion Pro", "../fonts/MinionPro/MinionPro-Bold",
+	$font-weight-bold);
 
-@include fontface("Open Sans", "/fonts/OpenSans/OpenSans-Bold",
-	$font-weight-bold, normal);
+/* FiraSans Pro (Normal) */
 
-/* Open Sans (Italic) */
+@include fontface("Fira Sans", "../fonts/FiraSans/FiraSans-Regular",
+	$font-weight-regular);
 
-@include fontface("Open Sans", "/fonts/OpenSans/OpenSans-LightItalic",
-	$font-weight-light, italic);
+@include fontface("Fira Sans", "../fonts/FiraSans/FiraSans-Medium",
+	$font-weight-semibold);
 
-@include fontface("Open Sans", "/fonts/OpenSans/OpenSans-RegularItalic",
+@include fontface("Fira Sans", "../fonts/FiraSans/FiraSans-Bold",
+	$font-weight-bold);
+
+/* Minion Pro (Italic) */
+
+@include fontface("Minion Pro", "../fonts/MinionPro/MinionPro-Italic",
 	$font-weight-regular, italic);
 
-@include fontface("Open Sans", "/fonts/OpenSans/OpenSans-SemiboldItalic",
+@include fontface("Minion Pro", "../fonts/MinionPro/MinionPro-SemiboldItalic",
 	$font-weight-semibold, italic);
 
-@include fontface("Open Sans", "/fonts/OpenSans/OpenSans-BoldItalic",
+@include fontface("Minion Pro", "../fonts/MinionPro/MinionPro-BoldItalic",
 	$font-weight-bold, italic);
+
+/* FiraSans Pro (Italic) */
+
+@include fontface("Fira Sans", "../fonts/FiraSans/FiraSans-Italic",
+	$font-weight-regular, italic);
