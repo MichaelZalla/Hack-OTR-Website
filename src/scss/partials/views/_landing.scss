@@ -5,13 +5,21 @@
 
 @import "components/footer";
 
+@import "components/rotating";
+
 #landing {
 
-	section#hero,
-	section#faq,
-	section#schedule { }
-
 	section#hero {
+
+		// @include background("");
+
+		// @include background("http://www.tysto.com/articles05/pics/cinci/cincinnati-fourth-and-vine.jpg");
+		// @include background("http://michaeljamescasey.com/blog/wp-content/uploads/2011/05/Music-Hall-1879.jpg", auto 100%);
+		// @include background("http://keepup-app.com/blog/wp-content/uploads/2013/07/The-Brandery-Office-5.jpg");
+		
+		@include background("../images/bg-1.png", auto 110%);
+
+		background-attachment: fixed;
 
 		.content {
 
@@ -41,7 +49,10 @@
 				div {
 					max-width: 336px;
 					padding: 1.25em 1.84em;
-					@extend %bordered;
+					// @extend %bordered;
+					// border-color: white;
+					background-color: white;
+					span { color: $brandery-black; }
 				}
 				span.label { font-size: 0.844rem };
 				span:not(.label) { @include typeset(1.313rem, 1.65, 0.0em, "Fira Sans"); }
@@ -52,10 +63,14 @@
 	}
 
 	section#intro,
-	section#schedule { background-color: $brandery-black; }
+	section#schedule {
+		position: relative;
+		overflow: hidden;
+		background-color: $brandery-black;
+	}
 
 	section#intro {
-				
+
 		.content { 
 			margin-top: 60px;
 			margin-bottom: 52px;
@@ -135,6 +150,7 @@
 
 	section#schedule {
 
+		/*
 		.content {
 
 			@include same(padding-left, padding-right, 0);
@@ -151,16 +167,48 @@
 			}
 
 		}
+		*/
+
+		.activities {
+
+			overflow-y: hidden;
+			margin-top: 45px;
+
+			li {
+			
+				margin-top: 36px;
+				text-align: center;
+		
+				span.time {
+					opacity: 0.35;
+					letter-spacing: 0.035em;
+				}
+
+				span.activity {
+					margin-top: 0.5rem;
+					font-size: 1.35rem;
+					line-height: 1.15;
+				}
+
+				span.role-call,
+				span.pitch-practice,
+				span.after-party { opacity: 0.35; }
+			
+			}
+		
+		}
 
 	}
 
 	section#sponsors {
 
-		min-height: 400px;
+		min-height: 650px;
 
 	}
 
 }
+
+#landing { .gear { @extend %rotating; } }
 
 /* Desktop styles */
 
@@ -173,9 +221,31 @@
 		line-height: 2.35;
 	}
 
-	section#hero .content {
+	section#hero {
+		position: relative;
+		overflow-y: hidden;
+	}
+
+	section#intro,
+	section#schedule {
+
+		.gear {
+			
+			position: absolute;
+			left: -48vh;
+			display: block;
+			width: 150vh;
+			height: 150vh;
+			opacity: 0.02;
+			
+			@include background("../images/gear.svg");
+
+		}
 
 	}
+
+	section#intro .gear { top: -14vh; }
+	section#schedule .gear { top: -94vh; }
 
 	section#faq .content {
 
@@ -212,7 +282,23 @@
 	}
 
 	section#schedule .content {
-		span.heading { @include same(padding-left, padding-right, $ss-desktop-content-side-padding); }
+		
+		// span.heading { @include same(padding-left, padding-right, $ss-desktop-content-side-padding); }
+
+		li { text-align: left; }
+
+		span { display: inline-block; }
+		
+		span.time {
+			font-size: 1em;
+			font-weight:$font-weight-regular;
+		}
+		
+		span.activity {
+			margin-left: 20px;
+			font-size: 2.35em;
+		}
+
 	}
 
 }

@@ -6,7 +6,10 @@ footer {
 		padding-bottom: 14px;
 	}
 
-	.column { text-align: center; }
+	.column {
+		@include same(padding-left, padding-right, 0 !important);
+		text-align: center;
+	}
 
 	.left {
 		

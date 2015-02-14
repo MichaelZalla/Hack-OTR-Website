@@ -171,15 +171,19 @@ header {
 			display: inline-block;
 			
 			@include same(margin-top, margin-bottom, 2px);
-			padding: 4px 20px 6px;
+			padding: 2px 20px 4px;
 			
-			// border: 2px solid $brandery-black;
-			background-color: transparent;
-			border-radius: 20px;
+			border: 2px solid white;
+			border-radius: 8px;
 			cursor: pointer;
 
 			@include vendorize("transition", 0.18s background-color ease-in-out);
-			@include mouseover(background-color, rgba(white, 0.12));
+			@include mouseout(border-color, transparent);
+			
+			// &:hover {
+			// 	background-color: white;
+			// 	a { color: $brandery-black; }
+			// }
 
 			a {
 				color: rgba(white, 0.84);

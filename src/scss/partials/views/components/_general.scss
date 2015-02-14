@@ -1,4 +1,4 @@
-%bordered { border: 2.5px solid black; }
+%bordered { border: 2.5px solid $brandery-black; }
 
 %highlight {
 	display: inline-block !important;
@@ -20,13 +20,11 @@ span.heading {
 	@include typeset(2.5rem, 1.0, 0.0em, "Minion Pro", $font-weight-semibold);
 	text-align: center;
 	text-transform: none;
-	// color: lighten(black, 8%);
 }
 
 span.hero {
 	display: block;
 	@include typeset(3.84rem, 1.0, -0.024em, "Fira Sans", $font-weight-semibold);
-	// color: lighten(black, 8%);
 }
 
 span.callout {
@@ -41,7 +39,7 @@ button,
 
 	overflow-y: hidden;
 	height: $button-height;
-	border-radius: ($button-height / 2);
+	// border-radius: ($button-height / 2);
 	@extend %bordered;
 
 	@include typeset(1.20rem, 1.35, 0.05em, "Fira Sans", $font-weight-semibold);
@@ -49,15 +47,29 @@ button,
 
 	@include vendorize(transition, all 0.18s ease-in-out);
 
+	&.light { border-color: white; }
+
 	&:not(:hover) {
-		color: black;
+		
 		background-color: transparent;
+
+		&.light { color: white; }
+		&:not(.light) { color: black; }
+
 	}
 
 	&:hover {
-		color: white;
-		@include same(background-color, border-color, black); // $brandery-dark
+		&.light {
+			color: $brandery-black;
+			@include same(background-color, border-color, white);
+		}
+		&:not(.light) {
+			color: white;
+			@include same(background-color, border-color, black);
+		}
 	}
+
+
 
 }
 
