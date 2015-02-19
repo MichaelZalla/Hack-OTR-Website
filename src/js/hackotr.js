@@ -8,11 +8,26 @@ $(function() {
 
 	// ScrollIt
 
+	$('header').addClass('mimimal');
+
 	$.scrollIt({
 		easing: 'linear',
 		scrollTime: 500,
 		activeClass: 'active',
-		topOffset: -1 * $('header').outerHeight()
+		// topOffset: -1 * $('header').outerHeight()
+		topOffset: -68
+	});
+
+	$('header').removeClass('mimimal');
+
+	// Waypoints (dynamic fixed header)
+
+	var headerWaypoint = new Waypoint({
+		element: document.getElementsByTagName('header'),
+		offset: -225,
+		handler: function() {
+			$('header').toggleClass('minimal');
+		}
 	});
 
 	// Collapse all answers in the FAQ
