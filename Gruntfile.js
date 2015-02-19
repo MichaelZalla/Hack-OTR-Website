@@ -79,10 +79,10 @@ module.exports = function(grunt) {
 				'dist/js/vendor/jquery/jquery.min.map':
 					['bower_components/jquery/dist/jquery.min.map']
 			}},
-			waypoint: { files: {
-				// jquery-waypoints.min.js
-				'dist/js/vendor/jquery/plugins/jquery-waypoints.min.js':
-					['bower_components/jquery-waypoints/waypoints.min.js']
+			waypoints: { files: {
+				// waypoints.min.js
+				'dist/js/vendor/waypoints.min.js':
+					['bower_components/waypoints/lib/jquery.waypoints.min.js']
 			}},
 			scrollit: { files: {
 				// jquery-scrollIt.min.js
