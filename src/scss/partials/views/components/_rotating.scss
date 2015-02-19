@@ -37,9 +37,14 @@
 }
 
 %rotating {
+	
 	-webkit-animation: rotating 35s linear infinite;
 	-moz-animation: rotating 35s linear infinite;
 	-ms-animation: rotating 35s linear infinite;
 	-o-animation: rotating 35s linear infinite;
 	animation: rotating 35s linear infinite;
+
+	@include vendorize(transform, translateZ(0));
+	@include vendorize(transform, translate3d(0,0,0));
+
 }

@@ -27,10 +27,13 @@ span.hero {
 	@include typeset(3.84rem, 1.0, -0.024em, "Fira Sans", $font-weight-semibold);
 }
 
-span.callout {
+span.callout,
+span.callout a {
 	display: block;
 	@include typeset(1.24rem, 2.15, 0.0em, "Fira Sans");
 }
+
+span.callout a { display: inline; font-size: 1.5rem; }
 
 button,
 .button {

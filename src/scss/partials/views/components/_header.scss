@@ -1,30 +1,103 @@
 header {
 
+
+	&,
+	#logo:before,
+	#logo:after,
+	.ss-header-navigation {
+		@include vendorize(transition, all 0.18s ease-in-out);
+	}
+
 	#logo {
 		
+		display: inline-block;
 		padding-left: 0;
+		width: 164px;
+		@include background("../images/logo/logo-banner.svg", 100% auto, 0% 56%);
 		
-		.label {
-			
-			margin-top: 7px;
-			font-size: 1.84rem;
-			opacity: 0.24;
-
-		}
-
 	}
 
 }
 
 /* Desktop styles */
 
+$logo-top-height: 42px;
+$logo-btm-height: 32px;
+
+$header-minimal-desktop-height: 84px;
+$header-minimal-tablet-height: 128px;
+
 @media #{ $medium-up } {
 
 header {
 
+	#logo {
 
+		position: relative;
+		background-size: cover;
+		@include same(width, height, 96px);
+
+		&:before,
+		&:after {
+			position: absolute;
+			display: block;
+			overflow-y: hidden;
+			margin-top: 0;
+			width: inherit;
+			opacity: 1;
+			content: "";
+		}
+
+		&:before {
+			top: 0;
+			height: $logo-top-height;
+			@include background("../images/logo/logo-top.svg", 100% auto, 0 -1px);
+		}
+
+		&:after {
+			bottom: 0;
+			height: $logo-btm-height;
+			@include background("../images/logo/logo-bottom.svg", 100% auto, 0 -63px);
+		}
+
+	}
+
+	.ss-header-navigation { margin-top: 32px; }
+
+}
+
+header.minimal {
+
+	height: $header-minimal-desktop-height - (8px * 2);
+
+	#logo { height: 48px; }
+	
+	#logo:before,
+	#logo:after {
+		height: 0px;
+		opacity: 0;
+	}
+
+	.ss-header-navigation { margin-top: 5px; }
 
 }
 
 }
 
+@media #{ $medium-only } {
+
+header {
+
+	.ss-header-navigation { margin-top: 8px; }
+
+}
+
+header.minimal {
+
+	height: $header-minimal-tablet-height - (8px * 2);
+
+	.left { height: 48px; }
+	
+}
+
+}

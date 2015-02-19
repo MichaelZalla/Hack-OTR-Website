@@ -9,6 +9,8 @@
 
 #landing {
 
+	background-color: $brandery-black;
+
 	section#hero {
 
 		// @include background("");
@@ -16,8 +18,10 @@
 		// @include background("http://www.tysto.com/articles05/pics/cinci/cincinnati-fourth-and-vine.jpg");
 		// @include background("http://michaeljamescasey.com/blog/wp-content/uploads/2011/05/Music-Hall-1879.jpg", auto 100%);
 		// @include background("http://keepup-app.com/blog/wp-content/uploads/2013/07/The-Brandery-Office-5.jpg");
+		// @include background("https://c2.staticflickr.com/6/5032/5910113048_90dbbdb801_b.jpg", auto 110%);
+		// @include background("../images/backgrounds/bg-2.png", 100% auto);
 		
-		@include background("../images/bg-1.png", auto 110%);
+		@include background("../images/backgrounds/bg-1.png", auto 110%);
 
 		background-attachment: fixed;
 
@@ -83,6 +87,9 @@
 		}
 
 	}
+	
+	section#faq,
+	section#sponsors { background-color: white; }
 
 	section#faq .content,
 	section#schedule .content { margin-bottom: 72px; }
@@ -150,34 +157,39 @@
 
 	section#schedule {
 
-		/*
-		.content {
+		.column { padding-left: 0; }
 
-			@include same(padding-left, padding-right, 0);
+		span.day {
 			
-			&, .row { max-width: none; }
-			.column { min-height:54px; }
-			.column:nth-child(odd) { text-align: right; background-color: blue; }
-			.column:nth-child(even) span { background-color: red; }
+			margin-top: 64px;
+			padding-bottom: 18px;
+			position: relative;
+			display: block !important;
+			border-top: 1px solid white;
+			text-align: center;
 
-			span.heading {
-				max-width: $ss-desktop-content-max-width;
-				@include same(margin-left, margin-right, auto);
-				@include same(padding-left, padding-right, $ss-mobile-content-side-padding);
+			opacity: 0.24;
+
+			span.label {
+				position: relative;
+				top: -13px;
+				display: inline;
+				background-color: $brandery-black;
+				font-size: 1.24rem;
+				@include same(padding-left, padding-right, 1.0em);
 			}
 
 		}
-		*/
 
 		.activities {
 
 			overflow-y: hidden;
-			margin-top: 45px;
 
 			li {
 			
-				margin-top: 36px;
 				text-align: center;
+
+				&:not(:first-child) { margin-top: 32px; }
 		
 				span.time {
 					opacity: 0.35;
@@ -190,6 +202,8 @@
 					line-height: 1.15;
 				}
 
+				span.talk,
+				span.food,
 				span.role-call,
 				span.pitch-practice,
 				span.after-party { opacity: 0.35; }
@@ -198,11 +212,48 @@
 		
 		}
 
+		span.footnote {
+			display: inline-block !important;
+			margin-top: 45px;
+			font-size: 0.76rem;
+			opacity: 0.35;
+		}
+
 	}
 
 	section#sponsors {
+	
+		min-height: 400px;
 
-		min-height: 650px;
+		.sponsors {
+			margin-top: 36px;
+			text-align: center;
+		}
+
+		.sponsor {
+
+			display: inline-block;
+			vertical-align: top;
+			margin-top: 14px;
+			margin-bottom: 4px;
+			padding: 24px;
+			width: 280px;
+			height: 178px;
+			border: 1px solid rgba(black, 0.18);
+			border-radius: 8px;
+			text-align: center;
+
+			.label {
+				margin-top: 24px;
+				color: $color-type-default;
+				opacity: 0.18;
+			}
+
+			img { max-height: 64px; }
+
+		}
+
+		.callout { line-height: 1.84; }
 
 	}
 
@@ -236,7 +287,7 @@
 			display: block;
 			width: 150vh;
 			height: 150vh;
-			opacity: 0.02;
+			opacity: 0.05;
 			
 			@include background("../images/gear.svg");
 
@@ -289,6 +340,8 @@
 
 		span { display: inline-block; }
 		
+		span.day { max-width: 90%; }
+
 		span.time {
 			font-size: 1em;
 			font-weight:$font-weight-regular;
@@ -301,6 +354,13 @@
 
 	}
 
+	section#sponsors {
+
+		.sponsors { text-align: left; }
+		.sponsor { margin-left: 14px; }
+
+	}
+
 }
 
 }
@@ -309,7 +369,7 @@
 
 #landing {
 
-	section#hero .content span.hero { margin-top: 0; }
+	section#hero .content span.hero { margin-top: 136px; }
 
 	section#faq .content ul.questions > li {
 		// Medium flexbox styles (3 columns)
