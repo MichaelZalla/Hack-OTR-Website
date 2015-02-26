@@ -92,7 +92,8 @@
 	section#sponsors { background-color: white; }
 
 	section#faq .content,
-	section#schedule .content { margin-bottom: 72px; }
+	section#schedule .content,
+	section#sponsors .content { margin-bottom: 72px; }
 
 	section#faq {
 
@@ -223,7 +224,8 @@
 
 	section#sponsors {
 	
-		min-height: 400px;
+		// min-height: 800px;
+		// padding-bottom:
 
 		.sponsors {
 			margin-top: 36px;
