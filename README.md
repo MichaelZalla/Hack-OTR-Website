@@ -1,4 +1,2 @@
 # hack-otr
-HackOTR 2014
-
-Visit www.hackotr.com!
+HackOTR 2014 hackathon website
