@@ -13,17 +13,13 @@
 
 	section#hero {
 
-		// @include background("");
-
-		// @include background("http://www.tysto.com/articles05/pics/cinci/cincinnati-fourth-and-vine.jpg");
-		// @include background("http://michaeljamescasey.com/blog/wp-content/uploads/2011/05/Music-Hall-1879.jpg", auto 100%);
-		// @include background("http://keepup-app.com/blog/wp-content/uploads/2013/07/The-Brandery-Office-5.jpg");
-		// @include background("https://c2.staticflickr.com/6/5032/5910113048_90dbbdb801_b.jpg", auto 110%);
-		// @include background("../images/backgrounds/bg-2.png", 100% auto);
-		
-		@include background("../images/backgrounds/bg-1.png", auto 110%);
+		@include background("../images/backgrounds/landing.jpg", auto 110%);
 
 		background-attachment: fixed;
+
+		.container {
+			background-color: rgba(0,0,0,0.65);
+		}
 
 		.content {
 
@@ -46,7 +42,7 @@
 			}
 
 			.w3.column {
-				
+
 				margin-top: 1.5em;
 				vertical-align: bottom;
 
@@ -75,7 +71,7 @@
 
 	section#intro {
 
-		.content { 
+		.content {
 			margin-top: 60px;
 			margin-bottom: 52px;
 		}
@@ -87,7 +83,7 @@
 		}
 
 	}
-	
+
 	section#faq,
 	section#sponsors { background-color: white; }
 
@@ -98,7 +94,7 @@
 	section#faq {
 
 		.content {
-	
+
 			ul.questions { counter-reset: questions; }
 
 			ul.questions > li {
@@ -128,7 +124,7 @@
 					@include typeset(0.938rem, 1.35, 0.0em, "Fira Sans", $font-weight-semibold);
 					text-transform: uppercase;
 				}
-				
+
 				.question:before {
 					// Question counter
 					counter-increment: questions;
@@ -136,10 +132,10 @@
 				}
 
 				.answer {
-					
+
 					display: none;
 					font-size: 1.1375rem;
-					
+
 					a {
 						display: inline;
 						font-size: 1.24rem;
@@ -161,7 +157,7 @@
 		.column { padding-left: 0; }
 
 		span.day {
-			
+
 			margin-top: 64px;
 			padding-bottom: 18px;
 			position: relative;
@@ -187,11 +183,11 @@
 			overflow-y: hidden;
 
 			li {
-			
+
 				text-align: center;
 
 				&:not(:first-child) { margin-top: 32px; }
-		
+
 				span.time {
 					opacity: 0.35;
 					letter-spacing: 0.035em;
@@ -208,9 +204,9 @@
 				span.role-call,
 				span.pitch-practice,
 				span.after-party { opacity: 0.35; }
-			
+
 			}
-		
+
 		}
 
 		span.footnote {
@@ -223,7 +219,7 @@
 	}
 
 	section#sponsors {
-	
+
 		// min-height: 800px;
 		// padding-bottom:
 
@@ -268,7 +264,7 @@
 @media #{ $medium-up } {
 
 #landing {
-	
+
 	span.callout {
 		font-size: 1.5rem;
 		line-height: 2.35;
@@ -283,14 +279,14 @@
 	section#schedule {
 
 		.gear {
-			
+
 			position: absolute;
 			left: -48vh;
 			display: block;
 			width: 150vh;
 			height: 150vh;
 			opacity: 0.05;
-			
+
 			@include background("../images/gear.svg");
 
 		}
@@ -309,17 +305,17 @@
 			// Safari 6.1+
 			display: -webkit-flex;
 			-webkit-flex-flow: row wrap;
-			
+
 			// Chrome 29+, Firefox 28+, IE11+
 			display: flex;
 			flex-flow: row wrap;
 
 			li {
-				
+
 				// Medium flexbox styles (2 columns)
 				// flex: <flex-grow> <flex-shrink> <flex-basis>
 				@include vendorize(flex, 0 1 50%);
-			
+
 				.answer { margin-left: 12px; }
 
 			}
@@ -335,20 +331,20 @@
 	}
 
 	section#schedule .content {
-		
+
 		// span.heading { @include same(padding-left, padding-right, $ss-desktop-content-side-padding); }
 
 		li { text-align: left; }
 
 		span { display: inline-block; }
-		
+
 		span.day { max-width: 90%; }
 
 		span.time {
 			font-size: 1em;
 			font-weight:$font-weight-regular;
 		}
-		
+
 		span.activity {
 			margin-left: 20px;
 			font-size: 2.35em;
