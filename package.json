@@ -14,7 +14,7 @@
   },
   "main": "src/scss/main.scss",
   "scripts": {
-    "postinstall": "git submodule init && git submodule update && git submodule foreach npm i",
+    "postinstall": "git submodule init && git submodule update && git submodule foreach 'npm i || :'",
     "build": "grunt build",
     "serve": "http-server ./dist"
   },
