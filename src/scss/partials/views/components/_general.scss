@@ -37,8 +37,8 @@ span.callout a { display: inline; font-size: 1.5rem; }
 
 button,
 .button {
-	
-	$button-height: 2.65em;
+
+	$button-height: 2.8em;
 
 	overflow-y: hidden;
 	height: $button-height;
@@ -53,7 +53,7 @@ button,
 	&.light { border-color: white; }
 
 	&:not(:hover) {
-		
+
 		background-color: transparent;
 
 		&.light { color: white; }
